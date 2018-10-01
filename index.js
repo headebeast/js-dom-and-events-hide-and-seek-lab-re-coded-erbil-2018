@@ -1,19 +1,22 @@
-function getFirstSelector(name) {
-  return document.querySelector(name)
+function getFirstSelector(selector)
+{
+  return document.querySelector(selector);
 }
-
-function nestedTarget() {
-  return document.querySelector('#nested .target')
+function nestedTarget()
+{
+  return document.querySelector("div#nested div.target");
 }
-
-function deepestChild() {
-  let node = document.getElementById('grand-node')
-  let nextNode = node.children[0]
-
-  while (nextNode) {
-    node = nextNode
-    nextNode = node.children[0]
+function increaseRankBy(n)
+{
+  let list = document.querySelectorAll(".ranked-list li");
+  for(let element of list)
+  {
+    element.innerHTML = parseInt(element.innerHTML)+n;
   }
-
-  return node
+}
+function deepestChild()
+{
+  let list = document.querySelectorAll("div#grand-node div");
+  
+  return list[list.length-1];
 }
